@@ -79,24 +79,65 @@ section {
     padding: 60px;
 }
 
+
 /*Hero Style Start */
 .hero {
     background-image: url("../images/hero-bg.jpg");
     height: 600px;
     background-size: cover;
     background-position: center;
+    position: relative;
   }
 /*Here Style End */
 
 /*Hero Form Style*/
 
 .hero-form {
+    /*Will include border declaration block for learning purposes. Shorthand is border: solid 3px #024e76;*/
+
+    border-style: solid;
+    border-width: 3px;
+    border-color:#024e76;
     background-color: #fce138;
     padding: 20px;
     width: 500px;
     color: #024e76;
-    /*Will include border declaration block for learning purposes. Shorthand is border: solid 3px #024e76;*/
-    border-style: solid;
-    border-width: 3px;
-    border-color:#024e76;
+    position: absolute;
+    bottom: 120px;
+    right:140px;
 }
+
+.hero-form h3 {
+    font-size: 23px;
+    margin: 0px;
+}
+
+.hero-form p {
+    margin: 5px 0 15px 0;
+}
+
+.hero-form label {
+    margin: 0 5px;
+}
+
+/*HERO STYLE START*/
+.hero-form button {
+    color:#fce138;
+    background-color: #024e76;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+/*HERO STYLES END*/
+
+.form-input {
+    border: 1px solid #024e76;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: 024e76;
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 15px;
+}
+

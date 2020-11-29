@@ -295,3 +295,18 @@ section {
     text-align: right;
 }
 
+
+.page-title h2 {
+    display: inline-block;
+    border-bottom: 4px solid;
+    color: #fce138;
+    /*padding long format for learning purposes*/
+    padding-top: 0;
+    padding-right: 42px;
+    padding-bottom: 15px;
+    padding-left: 80px;
+    font-size: 42px;
+    font-weight: normal;
+    font-style: italic;
+  }
+  

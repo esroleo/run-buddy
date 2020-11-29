@@ -149,7 +149,6 @@ section {
     font-size: 20x;
     /* display:inline-block; or margin: 0 auto:*/
     margin: 0 auto;
-
 }
 
 .steps {
@@ -243,6 +242,33 @@ section {
     line-height: 1.3;
 }
 
+.contact {
+    text-align: center;
+    background: #024e76;
+}
+
+.contact h2 {
+    color: #fce138;
+}
+
+/*contact info i frame.*/
+.contact-info iframe {
+    width: 400px;
+    height: 400px;
+}
+
+.contact-info div {
+    width: 400px;
+    display:inline-block;
+    vertical-align: top;
+    text-align: left;
+    margin: 30px 0 0 60px;
+    color: white;
+ 
+
+ 
+}
+
 .text-left {
     text-align: left;
 }
@@ -250,5 +276,4 @@ section {
 .text-right {
     text-align: right;
 }
-
 

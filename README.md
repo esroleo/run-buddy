@@ -1,2 +1,14 @@
-# run-buddy
-"Hi RUN BUDDY team, web page is not fully ready. Please give it a try and let me know."
+# Run Buddy
+
+## Purpose
+A website that offers fitness training services.
+
+## Built With
+* HTML
+* CSS
+
+## Website
+https://lernantino.github.io/run-buddy/
+
+## Contribution
+Made with ❤️ by [your name]

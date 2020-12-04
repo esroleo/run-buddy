@@ -19,6 +19,7 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    list-style: none;
 }
 
 /* adding display: inline takes the header nav elements and allow them to be back in inside the header block*/
@@ -36,22 +37,22 @@ header a {
     color: #fce138;
 }
 
-header nav {
-    
-    margin: 7px 0;
-}
+/* Flex added to the UL elements which in flex-direction default of row. */
+/* Then we needed to move the list elements arranged in rows to arrange in rows again, hence the row view */
 
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  header nav ul li a {
     margin: 0 30px;
     font-weight: lighter;
-    font-size: 22px;
-    
-    
+    font-size: 1.55vw;
 }
+
 
 footer {
     background: #fce138;

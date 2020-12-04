@@ -209,29 +209,56 @@ section {
     border-color: #39a6b2;
 }
 
-.steps div {
-    margin-bottom: 80px;
+/* Flex steps additions */
+.step {
+    margin: 50px auto;
+    padding-bottom: 50px;
+    width: 80%;
+    border-bottom: 1px solid #39a6b2; /*To add a solit line at the bottom of the class container*/
+    display: flex; /* Flex display added*/
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.steps img {
-    width: 15%;
-    margin: 10px 0;
-  } 
+.step-info {
+    flex: 2 70%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
-.steps h3 {
+/*Brind back the imgages to their container.*/
+.step-img {
+    flex: 1 12%;
+    margin-right: 20px;
+    max-width: 100%;
+}
+
+.step h3 {
     color: #024e76;
     font-size: 46px;
-    margin-top: 10px;
+    flex: 1 30%
 }
 
-.steps p {
-    color: #39a6b2;
-    font-size: 23px;
+.step-text {
+    flex: 12;
 }
 
-.steps span {
-    font-size: 38px;
+.step-text h4 {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #024e76;
 }
+
+.step-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #024e76;
+    
+}
+
+
 
 /*Trainers section styles*/
 /*Below text-align replaced with flex. */

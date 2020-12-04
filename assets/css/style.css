@@ -264,41 +264,48 @@ section {
 /*Below text-align replaced with flex. */
 
 .trainers {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
    
 }
 
 .trainer {
-    width: 900px;
-    margin: 0 auto 30px auto;
+    
+    margin: 20px;
     background: #024e76;
     color: #fce138;
+    flex: 1;
     /*provided block formatting context - told the article element to check that there is content of float html*/
-    overflow: auto;
+    /*overflow removed to allo trainers class to have proper flex */
+    
 }
 
 .trainer img {
     /*width made the picture smaller as it size horizontally is smaller*/
-    width: 35%;
+    width: 100%;
     /*takes the content and floats it left to the border.*/
-    float: left;
-
+    /*float no longer required in flex*/
 }
 
 .trainer-bio {
-    padding: 35px;   
-    float: left;
-    width: 65%;
+    padding: 25px;   
+    /*float no longer required in flex*/
 }
 
 .trainer-bio h3 {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 28px;
+   
 }
 
 .trainer-bio h4 {
     font-weight: lighter;
-    font-size: 26px;
-    margin-bottom: 25px;
+    font-size: 22px;
+    margin-bottom: 15px;
 }
 
 .trainer-bio p {

@@ -23,9 +23,30 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     list-style: none;
-    
+    /*Sticky position*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    /*Make sticky look like part of the hero section*/
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    /*Make the background image fixed which is relative to the viewport*/
+    background-attachment: fixed;
+    background-position: 80%;
+       
 }
 
+/* adding display: inline takes the header nav elements and allow them to be back in inside the header block*/
+header h1 {
+    font-weight: bold;
+    font-size: 36px;
+    color: #fce138;
+    margin: 0;
+    /*Transparency and shadows*/
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    
+}
 
 /* Flex added to the UL elements which in flex-direction default of row. */
 /* Then we needed to move the list elements arranged in rows to arrange in rows again, hence the row viewFlex added to the UL elements which in flex-direction default of row. */
@@ -35,6 +56,8 @@ header nav ul {
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    list-style-type: none;
+    
   }
   
   header nav ul li a {
@@ -42,17 +65,16 @@ header nav ul {
     font-weight: lighter;
     /*measurment of vw is equal to view port measurement. When moving the size of the window, It shrings in size too relatively to the view point of the user"*/
     font-size: 1.55vw;
-   
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
-
-/* adding display: inline takes the header nav elements and allow them to be back in inside the header block*/
-header h1 {
-    font-weight: bold;
-    font-size: 36px;
-    color: #fce138;
-    margin: 0;
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
 }
+
 
 header a {
     /*Removed the underling*/
@@ -95,6 +117,8 @@ section {
     background-image: url("../images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -113,6 +137,7 @@ section {
     color: #fff;
     font-size: 18px;
     line-height: 1.2;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta h2 {
@@ -128,14 +153,14 @@ section {
     border-style: solid;
     border-width: 3px;
     border-color:#024e76;
-    background-color: #fce138;
-    padding: 20px;
     color: #024e76;
+    /*Adding transparency to background of form*/
+    background-color: rgba(252,225,56, 0.8);
+    padding: 20px;
     width: 40%;
     margin: 3.5%;
-    
-    
-    right:140px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .hero-form h3 {
@@ -158,8 +183,20 @@ section {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    /* Example of compatablity 
+    -webkit-border-radius: 10px;  old versions of chrome and safari 
+    -moz-border-radius: 10px;  old versions of firefox 
+    border-radius: 10px;  standardized browsers */
+    border-radius: 10px;
 }
+
+.hero-form button:hover {
+    background-color: #39a6b2;  
+  }
+  
 /*HERO STYLES END*/
+
+
 
 .form-input {
     border: 1px solid #024e76;
@@ -170,8 +207,15 @@ section {
     width: 100%;
     margin-top: 3px;
     margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
 }
 
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    /*Remove the border outline as we have curved radious*/
+    outline: none;
+  }
 
 /* What you do section */
 /* Style all introduction as text-align: center as class="intro" */
@@ -217,12 +261,35 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2; /*To add a solit line at the bottom of the class container*/
+    /*
+    border-bottom: 1px solid #39a6b2;To add a solit line at the bottom of the class container*/
     display: flex; /* Flex display added*/
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
+
 }
+
+/*A way to modify childs of the same class inside a container
+.step:last-child {
+    border-bottom: 1px solid #39a6b2;
+  }
+  .step:nth-child(even) {
+    border-bottom: 1px solid #39a6b2;
+  }
+  */
+
+  /*advanced pseudo code.
+  .step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
+  }*/
+
+  
+  .step:last-child {
+    border-bottom: none;
+  }
+
 
 .step-info {
     flex: 2 70%;
@@ -444,6 +511,14 @@ section {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px; 
+    border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+   
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
 }
 
 .contact-form button {
@@ -454,9 +529,13 @@ section {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
-    
+    border-radius: 10px;
 }
 
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
+  }
 
 .text-left {
     text-align: left;
@@ -492,6 +571,8 @@ section {
     header {
         padding-bottom: 0;
         justify-content: center;
+        /*Undo stickines in smaller screen with position: relative*/
+        position: relative;
       }
     
       header h1 {
@@ -533,7 +614,6 @@ section {
       .contact-info iframe{
         flex: 1 100%;
       }
-
   }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */

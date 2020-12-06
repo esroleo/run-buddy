@@ -329,6 +329,10 @@ section {
   background-color: blue;
   border-style: solid;
   grid-auto-flow: row;
+  /*justify-items - row*/
+  /*align-items - column*/
+  justify-items: stretch;
+  align-items: stretch;
   /*Sample Code below of differnet grid column/row functionality"
   /*
   /*.grid-container {

@@ -12,6 +12,42 @@
     --tertiary-color: #39a6b2;
   }
 
+/*CSS Animation*/
+/*
+@keyframes fade-in {
+    from {
+      opacity: .8;  fully transparent
+    }
+  
+    to {
+      opacity: 1; /fully opaque 
+    }
+  }
+  /*Examples
+div {
+    animation-name: fade-in;
+    animation-duration: 5s;  animation lasts 1 second 
+    animation-iteration-count: infinite;
+ }*/
+
+ /*
+  div:hover {
+    animation: fade-in 2s infinite;  more shorthand version 
+  }*/
+/*
+  div {
+    color: purple;
+    font-size: 20px;
+    transition-duration: 2s; will apply to both color and font-size 
+  }
+  
+  div:hover {
+    color: black;
+    font-size: 200px;
+  }
+  /*
+
+
 /* I'm a CSS Comment!*/
 body {
     color: var(--tertiary-color);

@@ -1,6 +1,3 @@
-
-
-
 /* Remove default browser-enforced styles */
 * {
     margin: 0;
@@ -8,9 +5,16 @@
     box-sizing: border-box;
 }
 
+/*Global variables definitions*/
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+  }
+
 /* I'm a CSS Comment!*/
 body {
-    color: #39a6b2;
+    color: var(--tertiary-color);
     font-family: Helvetica, Arial, sans-serif;
     
 }
@@ -18,7 +22,7 @@ body {
 /* apply styles to <header>*/
 header {
     padding: 20px 35px;
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -34,14 +38,15 @@ header {
     /*Make the background image fixed which is relative to the viewport*/
     background-attachment: fixed;
     background-position: 80%;
-       
+    /*Stacking with z-index for any value with relative, absolute, sticky*/
+    z-index: 9999;
 }
 
 /* adding display: inline takes the header nav elements and allow them to be back in inside the header block*/
 header h1 {
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: var(--primary-color);
     margin: 0;
     /*Transparency and shadows*/
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -69,8 +74,8 @@ header nav ul {
 }
 
 header nav ul li a:hover {
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: 15px;
     text-shadow: none;
 }
@@ -80,12 +85,12 @@ header a {
     /*Removed the underling*/
     text-decoration: none;
     /*--------------------*/
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 
 footer {
-    background: #fce138;
+    background: var(--primary-color);
     width: 100%;
     padding: 40px 35px;
     display: flex;
@@ -94,7 +99,7 @@ footer {
 }
 
 footer h2 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 30px;
     margin: 0
 }
@@ -105,7 +110,7 @@ footer div {
 }
 
 footer a {
-    color: #024e76;
+    color: var(--secondary-color);
 }
 
 section {
@@ -143,17 +148,17 @@ section {
 .hero-cta h2 {
     font-style: italic;
     font-size: 55px;
-    color: #fce138;
+    color: var(--primary-color);
 
 }
 
 /*Hero Form Style*/
 .hero-form {
-    /*Will include border declaration block for learning purposes. Shorthand is border: solid 3px #024e76;*/
+    /*Will include border declaration block for learning purposes. Shorthand is border: solid 3px var(--secondary-color);*/
     border-style: solid;
     border-width: 3px;
-    border-color:#024e76;
-    color: #024e76;
+    border-color:var(--secondary-color);
+    color: var(--secondary-color);
     /*Adding transparency to background of form*/
     background-color: rgba(252,225,56, 0.8);
     padding: 20px;
@@ -161,6 +166,79 @@ section {
     margin: 3.5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+}
+
+/*Make the original buttons transparent for the hero form. CSS will be appplied on top*/
+.checkbox-wrapper input, .radio-wrapper input {
+    opacity: 0;
+  }
+
+.checkbox-wrapper label, .radio-wrapper label {
+    position: relative;
+    left: 10px;
+    margin: 10px;
+    line-height: 1.6;
+}
+
+/*Add bottons only uing css.*/
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid var(--secondary-color);  
+    position: absolute;
+    top: -4px;
+    left: -30px;
+    border-radius: 50%;
+}
+
+.radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--secondary-color);
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, var(--tertiary-color), var(--secondary-color));
+    
+  }
+  
+  .checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
+  }
+
+  /*to check if it still working - element behind*/
+  /*
+  .checkbox-wrapper input:checked, .radio-wrapper input:checked {
+    opacity: 1;
+  }
+  */
+/*this chnaged the text to bold
+.checkbox-wrapper input:checked + label,
+.radio-wrapper input:checked + label {
+  font-weight: bold;
+}*/
+
+.checkbox-wrapper input + label::after, 
+.radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+  content: "";
 }
 
 .hero-form h3 {
@@ -178,8 +256,8 @@ section {
 
 /*HERO STYLE START*/
 .hero-form button {
-    color:#fce138;
-    background-color: #024e76;
+    color:var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -191,7 +269,7 @@ section {
 }
 
 .hero-form button:hover {
-    background-color: #39a6b2;  
+    background-color: var(--tertiary-color);  
   }
   
 /*HERO STYLES END*/
@@ -199,11 +277,11 @@ section {
 
 
 .form-input {
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: 024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-top: 3px;
     margin-bottom: 15px;
@@ -224,7 +302,7 @@ section {
 
 .intro p {
     line-height: 1.7;
-    color: #39a6b2;
+    color: var(--tertiary-color);
     width: 80%;
     font-size: 20x;
     /* display:inline-block; or margin: 0 auto:*/
@@ -234,12 +312,12 @@ section {
 
 .steps {
     
-    background: #fce138;
+    background: var(--primary-color);
 }
 
 .section-title {
     font-size: 48px;
-    color: #024e76; 
+    color: var(--secondary-color); 
     border-bottom: 3px solid;
     padding-bottom: 20px;
     text-align: center;
@@ -249,11 +327,11 @@ section {
 }
 
 .primary-border {
-    border-color: #fce138;
+    border-color: var(--primary-color);
 }
 
 .secondary-border {
-    border-color: #39a6b2;
+    border-color: var(--tertiary-color);
 }
 
 /* Flex steps additions */
@@ -262,27 +340,27 @@ section {
     padding-bottom: 50px;
     width: 80%;
     /*
-    border-bottom: 1px solid #39a6b2;To add a solit line at the bottom of the class container*/
+    border-bottom: 1px solid var(--tertiary-color);To add a solit line at the bottom of the class container*/
     display: flex; /* Flex display added*/
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
 
 }
 
 /*A way to modify childs of the same class inside a container
 .step:last-child {
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
   }
   .step:nth-child(even) {
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
   }
   */
 
   /*advanced pseudo code.
   .step:not(:last-child) {
-    border-bottom: 1px solid #39a6b2;
+    border-bottom: 1px solid var(--tertiary-color);
   }*/
 
   
@@ -306,7 +384,7 @@ section {
 }
 
 .step h3 {
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 46px;
     flex: 1 30%
 }
@@ -318,13 +396,13 @@ section {
 .step-text h4 {
     font-size: 26px;
     line-height: 1.5;
-    color: #024e76;
+    color: var(--secondary-color);
 }
 
 .step-text p {
     font-size: 18px;
     line-height: 1.5;
-    color: #024e76;
+    color: var(--secondary-color);
     
 }
 
@@ -347,8 +425,8 @@ section {
 .trainer {
     
     margin: 20px;
-    background: #024e76;
-    color: #fce138;
+    background: var(--secondary-color);
+    color: var(--primary-color);
     flex: 1;
     /*provided block formatting context - told the article element to check that there is content of float html*/
     /*overflow removed to allo trainers class to have proper flex */
@@ -388,7 +466,7 @@ section {
 
 .services {
 
-    background: #fce138;
+    background: var(--primary-color);
 
 }
 
@@ -410,15 +488,15 @@ section {
     /* repeat(iterator, size) */
     grid-template-columns: 1fr repeat(2, 4fr);
     grid-template-rows: repeat(5, 1fr) 2fr;
-    border: 2px solid #024e76;
-    color:  #024e76;
+    border: 2px solid var(--secondary-color);
+    color:  var(--secondary-color);
     font-size: 1.2rem;
 
 }
 
 .service-grid-item {
     padding: 15px 0;
-    border: 2px solid #024e76;
+    border: 2px solid var(--secondary-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -453,15 +531,15 @@ section {
 
 /*Text align removed as flex used for .contact class */
 .contact {
-    background: #024e76;
+    background: var(--secondary-color);
 }
 
 .contact h2 {
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .contact h3 {
-    color: #fce138;
+    color: var(--primary-color);
     font-size: 32px;
 }
 
@@ -499,15 +577,15 @@ section {
 }
 
 .contact-info a {
-    color: #fce138;
+    color: var(--primary-color);
 }
 
 .contact-form input, .contact-form textarea {
-    border: 1px solid #024e76;
+    border: 1px solid var(--secondary-color);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
-    color: #024e76;
+    color: var(--secondary-color);
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px; 
@@ -524,8 +602,8 @@ section {
 .contact-form button {
     width: 100%;
     border: none;
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
@@ -533,8 +611,8 @@ section {
 }
 
 .contact-form button:hover {
-    color: #fce138;
-    background: #39a6b2;
+    color: var(--primary-color);
+    background: var(--tertiary-color);
   }
 
 .text-left {
@@ -549,7 +627,7 @@ section {
 .page-title h2 {
     display: inline-block;
     border-bottom: 4px solid;
-    color: #fce138;
+    color: var(--primary-color);
     /*padding long format for learning purposes*/
     padding-top: 0;
     padding-right: 42px;
